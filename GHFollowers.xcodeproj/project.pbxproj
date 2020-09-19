@@ -70,22 +70,70 @@
 		D249AC432515F90F00866F95 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				D249AC442515F90F00866F95 /* AppDelegate.swift */,
-				D249AC462515F90F00866F95 /* SceneDelegate.swift */,
-				D249AC582516012E00866F95 /* SearchViewController.swift */,
-				D249AC5A2516015F00866F95 /* FavoritesViewController.swift */,
-				D249AC602516198800866F95 /* FollowersViewController.swift */,
+				D27F21CE251664DB00C970D8 /* Models */,
+				D27F21CF251664EC00C970D8 /* Views */,
+				D27F21D0251664F800C970D8 /* Controllers */,
+				D27F21D32516657100C970D8 /* Utilities */,
+				D27F21D22516653200C970D8 /* Supporting Files */,
 				D249AC4D2515F91300866F95 /* Assets.xcassets */,
-				D249AC4F2515F91300866F95 /* LaunchScreen.storyboard */,
 				D249AC522515F91300866F95 /* Info.plist */,
+			);
+			path = GHFollowers;
+			sourceTree = "<group>";
+		};
+		D27F21CE251664DB00C970D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D27F21CF251664EC00C970D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D27F21D4251666BD00C970D8 /* Storyboards */,
 				D249AC5C251609AB00866F95 /* GFButton.swift */,
 				D249AC5E25160D7C00866F95 /* GFTextField.swift */,
 				D249AC62251620F200866F95 /* GFTitleLabel.swift */,
 				D249AC642516228500866F95 /* GFBodyLabel.swift */,
 				D249AC662516239B00866F95 /* GFAlertViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D27F21D0251664F800C970D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D249AC582516012E00866F95 /* SearchViewController.swift */,
+				D249AC5A2516015F00866F95 /* FavoritesViewController.swift */,
+				D249AC602516198800866F95 /* FollowersViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D27F21D22516653200C970D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D249AC442515F90F00866F95 /* AppDelegate.swift */,
+				D249AC462515F90F00866F95 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D27F21D32516657100C970D8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
 				D249AC6825162FD600866F95 /* UIViewController+Extension.swift */,
 			);
-			path = GHFollowers;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D27F21D4251666BD00C970D8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D249AC4F2515F91300866F95 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
