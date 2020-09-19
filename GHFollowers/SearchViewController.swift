@@ -9,9 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
-    // MARK: - Properties
-    
+        
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
@@ -19,8 +17,6 @@ class SearchViewController: UIViewController {
     var isUsernameEntered: Bool {
         return !usernameTextField.text!.isEmpty
     }
-
-    // MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +34,10 @@ class SearchViewController: UIViewController {
         
         navigationController?.isNavigationBarHidden = true
     }
-    
-    // MARK: - Actions
-    
-    @objc private func pushFollowersViewController() {
+        
+    @objc func pushFollowersViewController() {
         guard isUsernameEntered else {
-            print("No username")
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username.", buttonTitle: "Ok")
             return
         }
         
@@ -53,14 +47,12 @@ class SearchViewController: UIViewController {
         navigationController?.pushViewController(followersViewController, animated: true)
     }
     
-    private func createDismissKeyboardTapGesture() {
+    func createDismissKeyboardTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     }
 
-    // MARK: - Layout
-
-    private func configureLogoImageView() {
+    func configureLogoImageView() {
         view.addSubview(logoImageView)
         
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +66,7 @@ class SearchViewController: UIViewController {
         ])
     }
     
-    private func configureUsernameTextField() {
+    func configureUsernameTextField() {
         view.addSubview(usernameTextField)
         
         usernameTextField.delegate = self
@@ -87,7 +79,7 @@ class SearchViewController: UIViewController {
         ])
     }
     
-    private func configureCallToActionButton() {
+    func configureCallToActionButton() {
         view.addSubview(callToActionButton)
         
         callToActionButton.addTarget(self, action: #selector(pushFollowersViewController), for: .touchUpInside)
@@ -101,8 +93,6 @@ class SearchViewController: UIViewController {
     }
     
 }
-
-// MARK: - UITextFieldDelegate
 
 extension SearchViewController: UITextFieldDelegate {
     
