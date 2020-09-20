@@ -77,7 +77,7 @@
 				D27F21CE251664DB00C970D8 /* Models */,
 				D27F21CF251664EC00C970D8 /* Views */,
 				D27F21D0251664F800C970D8 /* Controllers */,
-				D27F21D32516657100C970D8 /* Utilities */,
+				D27F21D32516657100C970D8 /* Extensions */,
 				D27F21D22516653200C970D8 /* Supporting Files */,
 				D249AC4D2515F91300866F95 /* Assets.xcassets */,
 				D249AC522515F91300866F95 /* Info.plist */,
@@ -126,12 +126,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D27F21D32516657100C970D8 /* Utilities */ = {
+		D27F21D32516657100C970D8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D249AC6825162FD600866F95 /* UIViewController+Extension.swift */,
 			);
-			path = Utilities;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D27F21D4251666BD00C970D8 /* Storyboards */ = {
