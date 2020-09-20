@@ -23,6 +23,7 @@
 		D24EFC04251723A700743BD6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24EFC03251723A700743BD6 /* NetworkManager.swift */; };
 		D27F21D6251669F200C970D8 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F21D5251669F200C970D8 /* Follower.swift */; };
 		D27F21D825166A7B00C970D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F21D725166A7B00C970D8 /* User.swift */; };
+		D2B7500325174E2A00062073 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7500225174E2A00062073 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D24EFC03251723A700743BD6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D27F21D5251669F200C970D8 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		D27F21D725166A7B00C970D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2B7500225174E2A00062073 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				D27F21CF251664EC00C970D8 /* Views */,
 				D27F21D0251664F800C970D8 /* Controllers */,
 				D24EFC022517229C00743BD6 /* Managers */,
+				D2B7500125174D5D00062073 /* Utilities */,
 				D27F21D32516657100C970D8 /* Extensions */,
 				D27F21D22516653200C970D8 /* Supporting Files */,
 				D249AC4D2515F91300866F95 /* Assets.xcassets */,
@@ -151,6 +154,14 @@
 				D249AC4F2515F91300866F95 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D2B7500125174D5D00062073 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D2B7500225174E2A00062073 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				D249AC452515F90F00866F95 /* AppDelegate.swift in Sources */,
 				D249AC612516198800866F95 /* FollowersViewController.swift in Sources */,
 				D249AC672516239B00866F95 /* GFAlertViewController.swift in Sources */,
+				D2B7500325174E2A00062073 /* ErrorMessage.swift in Sources */,
 				D249AC592516012E00866F95 /* SearchViewController.swift in Sources */,
 				D27F21D6251669F200C970D8 /* Follower.swift in Sources */,
 				D249AC63251620F200866F95 /* GFTitleLabel.swift in Sources */,
