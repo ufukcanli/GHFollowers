@@ -26,6 +26,7 @@
 		D2B7500325174E2A00062073 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7500225174E2A00062073 /* GFError.swift */; };
 		D2B750052517564B00062073 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B750042517564B00062073 /* FollowerCell.swift */; };
 		D2B750072517572200062073 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B750062517572100062073 /* GFAvatarImageView.swift */; };
+		D2E6C4102525FCA80010C109 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6C40F2525FCA80010C109 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D2B7500225174E2A00062073 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 		D2B750042517564B00062073 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		D2B750062517572100062073 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		D2E6C40F2525FCA80010C109 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B7500225174E2A00062073 /* GFError.swift */,
+				D2E6C40F2525FCA80010C109 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Ufuk Canlı";
 				TargetAttributes = {
 					D249AC402515F90F00866F95 = {
@@ -245,6 +248,7 @@
 				D249AC6925162FD600866F95 /* UIViewController+Extension.swift in Sources */,
 				D249AC5D251609AB00866F95 /* GFButton.swift in Sources */,
 				D249AC452515F90F00866F95 /* AppDelegate.swift in Sources */,
+				D2E6C4102525FCA80010C109 /* UIHelper.swift in Sources */,
 				D2B750072517572200062073 /* GFAvatarImageView.swift in Sources */,
 				D249AC612516198800866F95 /* FollowersViewController.swift in Sources */,
 				D249AC672516239B00866F95 /* GFAlertViewController.swift in Sources */,
@@ -300,6 +304,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -324,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,6 +365,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -378,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
