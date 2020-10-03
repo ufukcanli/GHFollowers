@@ -37,12 +37,15 @@ class FollowersViewController: UIViewController {
     
     func fetchFollowers() {
         NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+            
+            guard let self = self else { return }
+            
             switch result {
             case .success(let followers):
-                self?.followers = followers
-                self?.updateData()
+                self.followers = followers
+                self.updateData()
             case .failure(let error):
-                self?.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
+                self.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -50,7 +53,7 @@ class FollowersViewController: UIViewController {
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseIdentifier)
-        collectionView.backgroundColor = .systemPink
+        collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
     }
     
@@ -66,7 +69,9 @@ class FollowersViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([Section.main])
         snapshot.appendItems(followers)
-        dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
     
 }
