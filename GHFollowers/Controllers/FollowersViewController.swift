@@ -38,9 +38,16 @@ class FollowersViewController: UIViewController {
     }
     
     func fetchFollowers(username: String, page: Int) {
+        
+        showLoadingView()
+        
         NetworkManager.shared.getFollowers(for: username, page: currentPage) { [weak self] result in
             
             guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.dismissLoadingView()
+            }
             
             switch result {
             case .success(let followers):
