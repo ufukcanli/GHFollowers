@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D227AF4E2529C39B00C8D720 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */; };
 		D249AC452515F90F00866F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D249AC442515F90F00866F95 /* AppDelegate.swift */; };
 		D249AC472515F90F00866F95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D249AC462515F90F00866F95 /* SceneDelegate.swift */; };
 		D249AC4E2515F91300866F95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D249AC4D2515F91300866F95 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		D249AC412515F90F00866F95 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D249AC442515F90F00866F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D249AC462515F90F00866F95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				D249AC662516239B00866F95 /* GFAlertViewController.swift */,
 				D2B750062517572100062073 /* GFAvatarImageView.swift */,
 				D2B750042517564B00062073 /* FollowerCell.swift */,
+				D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			files = (
 				D27F21D825166A7B00C970D8 /* User.swift in Sources */,
 				D249AC5B2516015F00866F95 /* FavoritesViewController.swift in Sources */,
+				D227AF4E2529C39B00C8D720 /* GFEmptyStateView.swift in Sources */,
 				D249AC6925162FD600866F95 /* UIViewController+Extension.swift in Sources */,
 				D249AC5D251609AB00866F95 /* GFButton.swift in Sources */,
 				D249AC452515F90F00866F95 /* AppDelegate.swift in Sources */,
