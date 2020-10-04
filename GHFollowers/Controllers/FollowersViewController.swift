@@ -134,12 +134,9 @@ extension FollowersViewController: UISearchResultsUpdating, UISearchBarDelegate 
         
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
         
-        if searchText.isEmpty {
-            updateData(on: followers)
-        } else {
-            filteredFollowers = followers.filter { $0.login.lowercased().contains(searchText.lowercased()) }
-            updateData(on: filteredFollowers)
-        }
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(searchText.lowercased()) }
+        
+        updateData(on: filteredFollowers)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
