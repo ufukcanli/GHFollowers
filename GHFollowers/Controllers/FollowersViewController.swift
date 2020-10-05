@@ -27,7 +27,6 @@ class FollowersViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        fetchFollowers(username: username, page: currentPage)
         configureSearchController()
         configureCollectionView()
         configureDataSource()
@@ -38,6 +37,8 @@ class FollowersViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        fetchFollowers(username: username, page: currentPage)
     }
     
     func fetchFollowers(username: String, page: Int) {
