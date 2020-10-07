@@ -40,7 +40,6 @@ class GFEmptyStateView: UIView {
         
         logoImageView.image = UIImage(named: "empty-state-logo-dark")
         
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
