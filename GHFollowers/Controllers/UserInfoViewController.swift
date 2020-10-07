@@ -71,9 +71,6 @@ class UserInfoViewController: UIViewController {
         view.addSubview(itemViewOne)
         view.addSubview(itemViewTwo)
         
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
-        
         headerView.translatesAutoresizingMaskIntoConstraints = false
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false
         itemViewTwo.translatesAutoresizingMaskIntoConstraints = false
