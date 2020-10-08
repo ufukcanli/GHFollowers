@@ -45,7 +45,7 @@ class UserInfoViewController: UIViewController {
                     self.add(childViewController: GFUserInfoHeaderViewController(user: user), to: self.headerView)
                     self.add(childViewController: GFRepoItemViewControler(user: user), to: self.itemViewOne)
                     self.add(childViewController: GFFollowerItemViewController(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = user.createdAt
+                    self.dateLabel.text = user.createdAt.convertToDisplayFormat()
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -91,16 +91,15 @@ class UserInfoViewController: UIViewController {
             itemViewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
             
-            
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-            itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: 18)
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
