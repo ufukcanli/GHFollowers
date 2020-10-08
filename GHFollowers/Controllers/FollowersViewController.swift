@@ -175,6 +175,7 @@ extension FollowersViewController: FollowersViewControllerDelegate {
         followers.removeAll()
         filteredFollowers.removeAll()
         collectionView.setContentOffset(.zero, animated: true)
+        fetchFollowers(username: username, page: currentPage)
     }
     
 }
