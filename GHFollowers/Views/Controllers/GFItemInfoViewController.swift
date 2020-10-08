@@ -16,6 +16,7 @@ class GFItemInfoViewController: UIViewController {
     let actionButton = GFButton()
     
     var user: User!
+    weak var delegate: UserInfoViewControllerDelegate!
 
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
@@ -30,13 +31,20 @@ class GFItemInfoViewController: UIViewController {
         super.viewDidLoad()
         
         configureBackgroundView()
+        configureActionButton()
         configureStackView()
         layoutUI()
     }
     
+    @objc func actionButtonTapped() {}
+    
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18
         view.backgroundColor = .secondarySystemBackground
+    }
+    
+    private func configureActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
     }
     
     private func configureStackView() {

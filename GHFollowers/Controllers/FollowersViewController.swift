@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FollowersViewControllerDelegate: class {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowersViewController: UIViewController {
     
     enum Section { case main }
@@ -134,6 +138,7 @@ extension FollowersViewController: UICollectionViewDelegate {
         
         let destinationViewController = UserInfoViewController()
         destinationViewController.username = follower.login
+        destinationViewController.delegate = self
         
         let navigationController = UINavigationController(rootViewController: destinationViewController)
         present(navigationController, animated: true, completion: nil)
@@ -157,6 +162,19 @@ extension FollowersViewController: UISearchResultsUpdating, UISearchBarDelegate 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         updateData(on: followers)
         isSearching = false
+    }
+    
+}
+
+extension FollowersViewController: FollowersViewControllerDelegate {
+    
+    func didRequestFollowers(for username: String) {
+        self.username = username
+        currentPage = 1
+        title = username
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
     }
     
 }
