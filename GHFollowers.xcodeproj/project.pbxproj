@@ -141,7 +141,7 @@
 				D2994E9F252DF6440080FCF6 /* Cells */,
 				D2994E9E252DF6250080FCF6 /* Labels */,
 				D2994EA9252E05D20080FCF6 /* Views */,
-				D2994EAA252E05E90080FCF6 /* View Controllers */,
+				D2994EAA252E05E90080FCF6 /* Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D2994EAA252E05E90080FCF6 /* View Controllers */ = {
+		D2994EAA252E05E90080FCF6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D249AC662516239B00866F95 /* GFAlertViewController.swift */,
@@ -235,7 +235,7 @@
 				D2994EAD252E12890080FCF6 /* GFRepoItemViewController.swift */,
 				D2994EB4252E16420080FCF6 /* GFFollowerItemViewController.swift */,
 			);
-			path = "View Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D2B7500125174D5D00062073 /* Utilities */ = {
