@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D20E39D12531D88800132F0F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20E39D02531D88800132F0F /* PersistenceManager.swift */; };
+		D20E39D42531ECBF00132F0F /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20E39D32531ECBF00132F0F /* FavoriteCell.swift */; };
 		D227AF4E2529C39B00C8D720 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */; };
 		D245CB7B252EF48B0032E93E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245CB7A252EF48B0032E93E /* Date+Extension.swift */; };
 		D245CB7F252EF4E80032E93E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245CB7E252EF4E80032E93E /* String+Extension.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		D20E39D02531D88800132F0F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		D20E39D32531ECBF00132F0F /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		D245CB7A252EF48B0032E93E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D245CB7E252EF4E80032E93E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B750042517564B00062073 /* FollowerCell.swift */,
+				D20E39D32531ECBF00132F0F /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				D249AC612516198800866F95 /* FollowersViewController.swift in Sources */,
 				D2994EA3252DF6F40080FCF6 /* GFItemInfoView.swift in Sources */,
 				D2994E95252DB2060080FCF6 /* GFUserInfoHeaderViewController.swift in Sources */,
+				D20E39D42531ECBF00132F0F /* FavoriteCell.swift in Sources */,
 				D249AC672516239B00866F95 /* GFAlertViewController.swift in Sources */,
 				D2B750052517564B00062073 /* FollowerCell.swift in Sources */,
 				D2B7500325174E2A00062073 /* GFError.swift in Sources */,
