@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20E39D12531D88800132F0F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20E39D02531D88800132F0F /* PersistenceManager.swift */; };
 		D227AF4E2529C39B00C8D720 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */; };
 		D245CB7B252EF48B0032E93E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245CB7A252EF48B0032E93E /* Date+Extension.swift */; };
 		D245CB7F252EF4E80032E93E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245CB7E252EF4E80032E93E /* String+Extension.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20E39D02531D88800132F0F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		D227AF4D2529C39B00C8D720 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		D245CB7A252EF48B0032E93E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D245CB7E252EF4E80032E93E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D24EFC03251723A700743BD6 /* NetworkManager.swift */,
+				D20E39D02531D88800132F0F /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				D27F21D6251669F200C970D8 /* Follower.swift in Sources */,
 				D249AC63251620F200866F95 /* GFTitleLabel.swift in Sources */,
 				D24EFC04251723A700743BD6 /* NetworkManager.swift in Sources */,
+				D20E39D12531D88800132F0F /* PersistenceManager.swift in Sources */,
 				D249AC472515F90F00866F95 /* SceneDelegate.swift in Sources */,
 				D2C7307A252B18A20063B23E /* UserInfoViewController.swift in Sources */,
 				D2994EA7252E053B0080FCF6 /* GFItemInfoViewController.swift in Sources */,

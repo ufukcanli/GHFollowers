@@ -29,8 +29,7 @@ class FollowersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
-        
+        configureViewController()
         configureSearchController()
         configureCollectionView()
         configureDataSource()
@@ -43,6 +42,41 @@ class FollowersViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         fetchFollowers(username: username, page: currentPage)
+    }
+    
+    @objc func addButtonTapped() {
+        
+        showLoadingView()
+        
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.dismissLoadingView()
+            }
+            
+            switch result {
+                case .success(let user):
+                    
+                    let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                    
+                    PersistenceManager.update(with: favorite, actionType: .add) { [weak self] error in
+                        
+                        guard let self = self else { return }
+                        
+                        guard let error = error else {
+                            self.presentGFAlertOnMainThread(title: "Success!", message: "You've successfully favorited this user.", buttonTitle: "Hooray!")
+                            return
+                        }
+                        
+                        self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                    }
+                    
+                case .failure(let error):
+                    self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
     }
     
     func fetchFollowers(username: String, page: Int) {
@@ -76,6 +110,13 @@ class FollowersViewController: UIViewController {
                 self.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    func configureViewController() {
+        view.backgroundColor = .systemBackground
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
     }
     
     func configureSearchController() {
