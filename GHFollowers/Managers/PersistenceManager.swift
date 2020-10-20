@@ -20,7 +20,7 @@ enum PersistenceManager {
         static let favorites = "favorites"
     }
     
-    static func update(with favorite: Follower, actionType: PersistenceActionType, completed: @escaping (GFError?) -> Void) {
+    static func update(with favorite: Follower, actionType: PersistenceActionType, completion: @escaping (GFError?) -> Void) {
         retrieveFavorites { result in
             switch result {
                 case .success(let favorites):
@@ -28,38 +28,37 @@ enum PersistenceManager {
                     switch actionType {
                     case .add:
                         guard !retrievedFavorites.contains(favorite) else {
-                            completed(.alreadyInFavorites)
+                            completion(.alreadyInFavorites)
                             return
                         }
                         retrievedFavorites.append(favorite)
                     case .remove:
                         retrievedFavorites.removeAll { $0.login == favorite.login }
                     }
-                    completed(save(favorites: retrievedFavorites))
+                    completion(save(favorites: retrievedFavorites))
                 case .failure(let error):
-                    completed(error)
+                    completion(error)
             }
         }
     }
     
-    static func retrieveFavorites(completed: @escaping (Result<[Follower], GFError>) -> Void) {
+    static func retrieveFavorites(completion: @escaping (Result<[Follower], GFError>) -> Void) {
         
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
-            completed(.success([]))
+            completion(.success([]))
             return
         }
         
         do {
             let decoder = JSONDecoder()
             let favorites = try decoder.decode([Follower].self, from: favoritesData)
-            completed(.success(favorites))
+            completion(.success(favorites))
         } catch {
-            completed(.failure(.unableToFavorite))
+            completion(.failure(.unableToFavorite))
         }
     }
     
     static func save(favorites: [Follower]) -> GFError? {
-        
         do {
             let encoder = JSONEncoder()
             let encodedFavorites = try encoder.encode(favorites)
