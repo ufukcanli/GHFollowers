@@ -31,7 +31,7 @@ class FavoriteCell: UITableViewCell {
     }
     
     private func configure() {
-        let padding: CGFloat = 12
+        let padding: CGFloat = 20
         
         addSubview(avatarImageView)
         addSubview(usernameLabel)

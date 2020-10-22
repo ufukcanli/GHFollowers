@@ -88,19 +88,53 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let favorite = favorites[indexPath.row]
-        
-        favorites.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
-        
-        PersistenceManager.update(with: favorite, actionType: .remove) { [weak self] error in
-            guard let self = self else { return }
-            guard let error = error else { return }
-            self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            
+            let favorite = self.favorites[indexPath.row]
+            
+            self.favorites.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+                        
+            PersistenceManager.update(with: favorite, actionType: .remove) { [weak self] error in
+                guard let self = self else { return }
+                guard let error = error else { return }
+                self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+            }
+            
+            completionHandler(true)
         }
+        
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+           
+            let defaultText = "I like this developer named \(self.favorites[indexPath.row].login)"
+            
+            let avatarImageView = GFAvatarImageView(frame: .zero)
+            avatarImageView.downloadImage(from: self.favorites[indexPath.row].avatarUrl)
+            
+            let activityController: UIActivityViewController
+            
+            if let imageToShare = avatarImageView.image {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
+            
+            self.present(activityController, animated: true, completion: nil)
+            
+            completionHandler(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0 , blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        shareAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0 , blue: 38.0/255.0, alpha: 1.0)
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
     }
     
 }
