@@ -36,7 +36,7 @@ class GFEmptyStateView: UIView {
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
         
-        logoImageView.image = UIImage(named: "empty-state-logo-dark")
+        logoImageView.image = Images.emptyStateDark
         
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
