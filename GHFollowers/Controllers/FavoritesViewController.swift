@@ -97,13 +97,16 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
             
             let favorite = self.favorites[indexPath.row]
-            
-            self.favorites.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .left)
                         
             PersistenceManager.update(with: favorite, actionType: .remove) { [weak self] error in
                 guard let self = self else { return }
-                guard let error = error else { return }
+                
+                guard let error = error else {
+                    self.favorites.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .left)
+                    return
+                }
+                
                 self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
             }
             
