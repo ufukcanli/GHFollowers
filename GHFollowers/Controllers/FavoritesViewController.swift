@@ -12,6 +12,8 @@ class FavoritesViewController: UIViewController {
     
     let tableView = UITableView()
     
+    let avatarImageView = GFAvatarImageView(frame: .zero)
+    
     var favorites = [Follower]()
     
     override func viewDidLoad() {
@@ -110,12 +112,16 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
            
             let defaultText = "I like this developer named \(self.favorites[indexPath.row].login)"
             
-            let avatarImageView = GFAvatarImageView(frame: .zero)
-            avatarImageView.downloadImage(from: self.favorites[indexPath.row].avatarUrl)
+            NetworkManager.shared.downloadImage(from: self.favorites[indexPath.row].avatarUrl) { [weak self] image in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    self.avatarImageView.image = image
+                }
+            }
             
             let activityController: UIActivityViewController
             
-            if let imageToShare = avatarImageView.image {
+            if let imageToShare = self.avatarImageView.image {
                 activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
             } else {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
