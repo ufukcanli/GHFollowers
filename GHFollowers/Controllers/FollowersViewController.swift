@@ -22,6 +22,7 @@ class FollowersViewController: UIViewController {
     var currentPage = 1
     var hasMoreFollowers = true
     var isSearching = false
+    var isLoadingMoreFollowers = false
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -92,6 +93,7 @@ class FollowersViewController: UIViewController {
     func fetchFollowers(username: String, page: Int) {
         
         showLoadingView()
+        isLoadingMoreFollowers = true
         
         NetworkManager.shared.getFollowers(for: username, page: currentPage) { [weak self] result in
             
@@ -119,6 +121,8 @@ class FollowersViewController: UIViewController {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
+            
+            self.isLoadingMoreFollowers = false
         }
     }
     
@@ -176,7 +180,7 @@ extension FollowersViewController: UICollectionViewDelegate {
         let screenHeight = scrollView.frame.size.height
         
         if offsetY > contentHeight - screenHeight {
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             currentPage += 1
             fetchFollowers(username: username, page: currentPage)
         }
@@ -224,7 +228,7 @@ extension FollowersViewController: FollowersViewControllerDelegate {
         title = username
         followers.removeAll()
         filteredFollowers.removeAll()
-        collectionView.setContentOffset(.zero, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         fetchFollowers(username: username, page: currentPage)
     }
     
