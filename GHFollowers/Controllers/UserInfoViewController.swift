@@ -85,7 +85,7 @@ class UserInfoViewController: UIViewController {
     }
     
     func layoutUI() {
-        let padding: CGFloat = 20
+        let padding: CGFloat = DeviceTypes.isiPhoneSE ? 12 : 20
         let itemHeight: CGFloat = 140
         
         view.addSubview(headerView)
@@ -101,7 +101,7 @@ class UserInfoViewController: UIViewController {
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 180),
+            headerView.heightAnchor.constraint(equalToConstant:  DeviceTypes.isiPhoneSE ? 120 : 180),
             
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
