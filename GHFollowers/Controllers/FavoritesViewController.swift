@@ -63,6 +63,8 @@ class FavoritesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.removeExceesCells()
+        
         tableView.frame = view.bounds
         tableView.rowHeight = 80
         
